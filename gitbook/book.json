@@ -1,0 +1,28 @@
+{
+  "title": "gitbook_title",
+  "plugins": [
+    "lb2br",
+    "plantuml-cloud",
+    "footnote-string-to-number",
+    "anchors",
+    "image-captions",
+    "-sharing",
+    "hide-published-with"
+  ],
+  "pluginsConfig": {
+    "plantuml-cloud": {
+      "protocol": "http",
+      "host": "plantuml",
+      "port": 1608,
+      "blockRegex": "^```.*uml((.*[\r\n])+?)?```$"
+    },
+    "image-captions": {
+      "caption": "Image _PAGE_LEVEL_._PAGE_IMAGE_NUMBER_ - _CAPTION_"
+    }
+  },
+  "pdf": {
+    "paperSize": "a4"
+  },
+  "language": "ja",
+  "root": "docs"
+}

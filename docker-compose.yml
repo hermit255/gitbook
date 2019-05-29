@@ -1,0 +1,23 @@
+version: "3"
+services:
+  plantuml:
+    image: 'bitjourney/plantuml-service:1.3.5'
+
+  gitbook:
+    image: my_gitbook
+    build: .
+    container_name: gitbook
+    volumes:
+      - ${DOCS_DIR}:/gitbook/docs
+      - ${BUILD_DIR}:/_build
+      - ${EXPORT_DIR}:/_export
+    ports:
+      - 4000:4000
+      - 35729:35729
+    depends_on:
+      - plantuml
+    tty: true
+    entrypoint:
+      - npm
+      - run
+    command: serve
