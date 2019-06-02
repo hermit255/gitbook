@@ -2,7 +2,12 @@ FROM node:11.9-slim
 LABEL maintainer="hermit255"
 
 ENV GITBOOK_DIR /gitbook
-RUN mkdir ${GITBOOK_DIR}
+ENV CONF_DIR /gitbook/conf
+ENV CONF conf_default.tgz
+
+RUN mkdir -p ${CONF_DIR}
+ADD conf/${CONF} ${CONF_DIR}
+
 WORKDIR ${GITBOOK_DIR}
 
 RUN apt-get update -y && \
@@ -13,9 +18,5 @@ RUN apt-get update -y && \
     apt-get clean
 RUN yarn global add gitbook-cli svgexport
 
-COPY ./gitbook/book.json ${GITBOOK_DIR}/
-COPY ./gitbook/package.json ${GITBOOK_DIR}/
-RUN gitbook install
-
-ENTRYPOINT ["npm", "run"]
+ENTRYPOINT ["sh", "conf/entry_point.sh"]
 CMD ["serve"]

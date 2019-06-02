@@ -9,15 +9,13 @@ services:
     container_name: gitbook
     volumes:
       - ${DOCS_DIR}:/gitbook/docs
-      - ${BUILD_DIR}:/_build
       - ${EXPORT_DIR}:/_export
+      - node_modules:/gitbook/node_modules
+      - ${CONF_DIR}:/gitbook/conf
     ports:
       - 4000:4000
       - 35729:35729
     depends_on:
       - plantuml
-    tty: true
-    entrypoint:
-      - npm
-      - run
-    command: serve
+volumes:
+  node_modules:
