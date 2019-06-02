@@ -2,7 +2,7 @@ FROM node:11.9-slim
 LABEL maintainer="hermit255"
 
 ENV GITBOOK_DIR /gitbook
-ENV CONF_DIR /gitbook/conf
+ENV CONF_DIR ${GITBOOK_DIR}/conf
 ENV CONF conf_default.tgz
 
 RUN mkdir -p ${CONF_DIR}

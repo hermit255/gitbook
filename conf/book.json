@@ -6,8 +6,8 @@
     "footnote-string-to-number",
     "anchors",
     "image-captions",
-    "-sharing",
-    "hide-published-with"
+    "hide-published-with",
+    "include-csv"
   ],
   "pluginsConfig": {
     "plantuml-cloud": {
@@ -18,6 +18,11 @@
     },
     "image-captions": {
       "caption": "Image _PAGE_LEVEL_._PAGE_IMAGE_NUMBER_ - _CAPTION_"
+    },
+    "fontSettings": {
+      "theme": "white",
+      "family": "sans",
+      "size": 2
     }
   },
   "pdf": {

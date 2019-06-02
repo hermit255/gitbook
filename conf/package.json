@@ -6,7 +6,7 @@
     "test": "give gitbook sumcommand (init|install|serve|build|pdf|epub|mobi)",
     "init": "gitbook init /gitbook",
     "install": "gitbook install",
-    "serve": "gitbook serve /gitbook /_build",
+    "serve": "gitbook serve /gitbook",
     "build": "gitbook build /gitbook /_build",
     "pdf": "gitbook pdf /gitbook /_export/book.pdf",
     "epub": "gitbook epub /gitbook /_export/book.epub",

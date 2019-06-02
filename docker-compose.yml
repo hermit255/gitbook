@@ -10,7 +10,7 @@ services:
     volumes:
       - ${DOCS_DIR}:/gitbook/docs
       - ${EXPORT_DIR}:/_export
-      - node_modules:/gitbook/node_modules
+      - gitbook_node_modules:/gitbook/node_modules
       - ${CONF_DIR}:/gitbook/conf
     ports:
       - 4000:4000
@@ -18,4 +18,4 @@ services:
     depends_on:
       - plantuml
 volumes:
-  node_modules:
+  gitbook_node_modules:
